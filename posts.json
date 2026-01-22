@@ -15,7 +15,7 @@
     "views": 4520,
     "featured": true,
     "breaking": true,
-    "image": "default-thumbnail.jpg"
+    "image": "images/default-thumbnail.jpg"
   },
   {
     "id": 2,
@@ -33,7 +33,7 @@
     "views": 3890,
     "featured": true,
     "breaking": false,
-    "image": "default-thumbnail1.jpg"
+    "image": "images/default-thumbnail.jpg"
   },
   {
     "id": 3,
@@ -51,7 +51,7 @@
     "views": 5260,
     "featured": true,
     "breaking": false,
-    "image": "default-thumbnail2.jpg"
+    "image": "images/default-thumbnail.jpg"
   },
   {
     "id": 4,
@@ -69,7 +69,7 @@
     "views": 3240,
     "featured": false,
     "breaking": false,
-    "image": "default-thumbnail3.jpg"
+    "image": "images/default-thumbnail.jpg"
   },
   {
     "id": 5,
@@ -87,7 +87,7 @@
     "views": 2560,
     "featured": false,
     "breaking": false,
-    "image": "default-thumbnail4.jpg"
+    "image": "images/default-thumbnail.jpg"
   },
   {
     "id": 6,
@@ -105,7 +105,7 @@
     "views": 4120,
     "featured": false,
     "breaking": false,
-    "image": "/default-thumbnail.jpg"
+    "image": "images/default-thumbnail.jpg"
   },
   {
     "id": 7,
@@ -123,7 +123,7 @@
     "views": 3780,
     "featured": false,
     "breaking": false,
-    "image": "/default-thumbnail.jpg"
+    "image": "images/default-thumbnail.jpg"
   },
   {
     "id": 8,
@@ -141,7 +141,7 @@
     "views": 2950,
     "featured": false,
     "breaking": false,
-    "image": "/default-thumbnail.jpg"
+    "image": "images/default-thumbnail.jpg"
   },
   {
     "id": 9,
@@ -159,7 +159,7 @@
     "views": 4320,
     "featured": true,
     "breaking": true,
-    "image": "/default-thumbnail.jpg"
+    "image": "images/default-thumbnail.jpg"
   },
   {
     "id": 10,
@@ -177,7 +177,7 @@
     "views": 9999,
     "featured": true,
     "breaking": true,
-    "image": "siam.jpg"
+    "image": "images/default-thumbnail.jpg"
   },
   {
     "id": 11,
@@ -195,7 +195,7 @@
     "views": 5670,
     "featured": true,
     "breaking": false,
-    "image": "default-thumbnail11.jpg"
+    "image": "images/default-thumbnail.jpg"
   },
   {
     "id": 12,
@@ -213,9 +213,6 @@
     "views": 3980,
     "featured": false,
     "breaking": false,
-    "image": "default-thumbnail12.jpg"
-  }
-]: false,
     "image": "images/default-thumbnail.jpg"
   }
 ]
