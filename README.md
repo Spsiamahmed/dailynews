@@ -215,9 +215,9 @@ Google Fonts বাংলা ফন্ট
 
 প্রশ্ন বা সহায়তার জন্য:
 
-· ইমেইল: support@dainiksangbad.com
-· ওয়েবসাইট: https://dainiksangbad.com
-· গিটহাব: [Repository Link]
+· ইমেইল: spsiamahmed1111@gmail.com
+· ওয়েবসাইট: [siam.ct.ws]
+· গিটহাব: [https://spsiamahmed.github.io/dailynews/]
 
 ---
 
@@ -225,4 +225,4 @@ Google Fonts বাংলা ফন্ট
 
 ---
 
-আপডেট: মে ২০২৪ | ভার্সন: 2.0
+আপডেট: জানুয়ারী ২০২৬ | ভার্সন: 2.0
