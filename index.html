@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>দৈনিক সংবাদ | আধুনিক বাংলা সংবাদপত্র | Project by Sp Siam Ahmed</title>
+    <!-- Primary Meta Tags -->
+    
+    <meta name="title" content="Daily News | Latest News Update – Project by SP Siam Ahmed">
+    <meta name="description" content="Daily News is a modern online news portal providing latest national and international news. This website is developed as a project by SP Siam Ahmed.">
+    <meta name="keywords" content="Daily News, online news portal, latest news, breaking news, Bangladesh news, world news, SP Siam Ahmed, web development project">
+    <meta name="author" content="SP Siam Ahmed">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Noto+Serif+Bengali:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="images/logo.png">
+    
+    <style>
+        /* Font Awesome ফন্ট ফিক্স */
+        .fa, .fas, .far, .fal, .fab {
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+        }
+        .far {
+            font-weight: 400;
+        }
+        .fab {
+            font-family: 'Font Awesome 6 Brands';
+        }
+    </style>
+</head>
+<body>
+    <!-- স্ক্রল টপ বাটন -->
+    <button class="scroll-top-btn" id="scrollTopBtn">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- শীর্ষ বার -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="date-time" id="datetime">বৃহস্পতিবার, ২৩ মে, ২০২৪ | ০৯:৪৫ AM</div>
+            <div class="top-links">
+                <a href="#"><i class="fas fa-sign-in-alt"></i> লগইন</a>
+                <a href="#"><i class="fas fa-user-plus"></i> রেজিস্টার</a>
+                <a href="#" id="searchToggle"><i class="fas fa-search"></i> খুঁজুন</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- সার্চ ওভারলে -->
+    <div class="search-overlay" id="searchOverlay">
+        <div class="search-container">
+            <div class="search-header">
+                <h3><i class="fas fa-search"></i> খুঁজুন</h3>
+                <button class="close-search" id="closeSearch">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="search-input-group">
+                <input type="text" id="searchInput" placeholder="খুঁজতে টাইপ করুন...">
+                <button id="searchButton"><i class="fas fa-search"></i></button>
+            </div>
+            <div class="search-results" id="searchResults">
+                <!-- সার্চ ফলাফল এখানে দেখাবে -->
+            </div>
+        </div>
+    </div>
+
+    <!-- হেডার -->
+    <header class="header">
+        <div class="container">
+            <div class="logo-section">
+                <div class="logo">
+                    <h1><a href="#" id="homeLink">দৈনিক সংবাদ</a></h1>
+                    <p>আধুনিক বাংলা সংবাদপত্র</p>
+                </div>
+                <div class="header-ad">
+                    <div class="live-news">
+                        <span class="live-dot"></span>
+                        <span>লাইভ</span>
+                        <marquee behavior="scroll" direction="left" scrollamount="3">
+                            সর্বশেষ: নতুন প্রযুক্তি পণ্য বাজারে আসছে | শিক্ষা মন্ত্রণালয়ের নতুন নির্দেশিকা | শেয়ার বাজারে ঊর্ধ্বমুখী প্রবণতা
+                        </marquee>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- নেভিগেশন বার -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <!-- মোবাইল লোগো -->
+                <div class="mobile-logo">
+                    <a href="#" id="mobileHomeLink">
+                        <i class="fas fa-newspaper"></i> দৈনিক সংবাদ
+                    </a>
+                </div>
+                
+                <!-- ডেস্কটপ নেভিগেশন -->
+                <div class="nav-container">
+                    <ul class="nav-menu" id="navMenu">
+                        <li><a href="#" class="active" data-category="all"><i class="fas fa-home"></i> হোম</a></li>
+                        <li><a href="#" data-category="1"><i class="fas fa-flag"></i> জাতীয়</a></li>
+                        <li><a href="#" data-category="2"><i class="fas fa-globe-asia"></i> আন্তর্জাতিক</a></li>
+                        <li><a href="#" data-category="3"><i class="fas fa-futbol"></i> খেলাধুলা</a></li>
+                        <li><a href="#" data-category="4"><i class="fas fa-film"></i> বিনোদন</a></li>
+                        <li><a href="#" data-category="5"><i class="fas fa-landmark"></i> রাজনীতি</a></li>
+                        <li><a href="#" data-category="6"><i class="fas fa-chart-line"></i> বাণিজ্য</a></li>
+                        <li><a href="#" data-category="7"><i class="fas fa-laptop"></i> প্রযুক্তি</a></li>
+                        <li><a href="#" data-category="8"><i class="fas fa-heartbeat"></i> স্বাস্থ্য</a></li>
+                    </ul>
+                    
+                    <!-- এক্সট্রা বাটন -->
+                    <div class="nav-extra">
+                        <button class="nav-extra-btn" id="themeToggle" title="থিম পরিবর্তন">
+                            <i class="fas fa-moon" id="themeIcon"></i>
+                        </button>
+                        <button class="nav-extra-btn" id="fontSizeToggle" title="ফন্ট সাইজ">
+                            <i class="fas fa-font" id="fontSizeIcon"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- মোবাইল মেনু বাটন -->
+                <button class="mobile-menu-btn" id="mobileMenuBtn" title="মেনু">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ব্রেকিং নিউজ -->
+    <div class="breaking-news">
+        <div class="container">
+            <div class="breaking-label">
+                <i class="fas fa-bolt"></i> ব্রেকিং নিউজ
+            </div>
+            <div class="breaking-content">
+                <div class="breaking-slider" id="breakingSlider">
+                    <!-- ব্রেকিং নিউজ এখানে লোড হবে -->
+                    <div>নতুন বাজেট ঘোষণা: মধ্যবিত্তের জন্য কিছু রিলিফ</div>
+                    <div>আন্তর্জাতিক সম্মেলনে বাংলাদেশের সাফল্য</div>
+                    <div>ক্রিকেট বিশ্বকাপ: বাংলাদেশের জয়</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- প্রধান কন্টেন্ট -->
+    <main class="main-content" id="mainContent">
+        <!-- পোস্ট ডিটেইল পেজ -->
+        <div class="post-detail-page" id="postDetailPage">
+            <div class="container">
+                <div class="back-button">
+                    <button id="backToHomeBtn"><i class="fas fa-arrow-left"></i> সব সংবাদ দেখুন</button>
+                </div>
+                <article class="post-detail" id="postDetail">
+                    <!-- পোস্ট ডিটেইল এখানে লোড হবে -->
+                    <div class="post-header">
+                        <span class="post-category" style="background-color: #e53e3e">জাতীয়</span>
+                        <h1>নতুন বাজেট ঘোষণা: মধ্যবিত্তের জন্য কিছু রিলিফ</h1>
+                        <div class="post-meta">
+                            <span><i class="far fa-user"></i> প্রতিবেদক ১</span>
+                            <span><i class="far fa-calendar"></i> ২৩ মে, ২০২৪</span>
+                            <span><i class="far fa-eye"></i> ৪,৫২০ ভিউ</span>
+                            <span><i class="far fa-clock"></i> ৩ মিনিট পড়া</span>
+                        </div>
+                    </div>
+                    <div class="post-image">
+                        <img src="images/default-thumbnail.jpg" alt="নতুন বাজেট ঘোষণা" onerror="this.src='https://via.placeholder.com/800x400/1a365d/ffffff?text=সংবাদ+ছবি'">
+                    </div>
+                    <div class="post-content">
+                        <p>আগামী অর্থবছরের জন্য নতুন বাজেট ঘোষণা করা হয়েছে। মধ্যবিত্ত পরিবারের জন্য কিছু ছাড় দেওয়া হয়েছে যা তাদের আর্থিক চাপ কিছুটা কমাবে। অর্থমন্ত্রী আজ সংসদে বাজেট উপস্থাপন করেন। নতুন বাজেটে শিক্ষা ও স্বাস্থ্য খাতে বরাদ্দ বৃদ্ধি পেয়েছে। বিশেষজ্ঞরা মনে করেন এই বাজেট দেশের অর্থনীতির জন্য ইতিবাচক হবে।</p>
+                        <p>বাজেটে কর রেয়াতের ব্যবস্থা রয়েছে, যা মধ্যবিত্তদের জন্য উপকারী হবে। বেসিক করমুক্ত আয়সীমা বাড়ানো হয়েছে, যার ফলে কম আয়ের মানুষদের করের বোঝা কমবে।</p>
+                        <p>শিক্ষা খাতে বাজেট বাড়ানো হয়েছে ১৫%, যা শিক্ষা ব্যবস্থার উন্নয়নে ভূমিকা রাখবে। স্বাস্থ্য খাতে বরাদ্দ বৃদ্ধি পেয়েছে ২০%, যা করোনা পরবর্তী স্বাস্থ্য ব্যবস্থাকে শক্তিশালী করবে।</p>
+                        <div class="post-tags">
+                            <a href="#">#সংবাদ</a>
+                            <a href="#">#জাতীয়</a>
+                            <a href="#">#বাংলাদেশ</a>
+                            <a href="#">#সাম্প্রতিক</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+
+        <!-- হোমপেজ কন্টেন্ট -->
+        <div class="homepage active" id="homepage">
+            <div class="container">
+                <!-- ফিচার নিউজ -->
+                <section class="featured-news">
+                    <div class="section-header">
+                        <h2><i class="fas fa-star"></i> ফিচার নিউজ</h2>
+                        <a href="#" class="view-all" id="viewAllFeatured">সব দেখুন <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="featured-grid" id="featuredNews">
+                        <!-- ফিচার নিউজ এখানে লোড হবে -->
+                        <article class="featured-article" data-id="1">
+                            <div class="featured-img">
+                                <img src="images/default-thumbnail.jpg" alt="নতুন বাজেট ঘোষণা" onerror="this.src='https://via.placeholder.com/400x200/1a365d/ffffff?text=সংবাদ+ছবি'">
+                            </div>
+                            <div class="featured-content">
+                                <span class="featured-category" style="background-color: #e53e3e">জাতীয়</span>
+                                <h3>নতুন বাজেট ঘোষণা: মধ্যবিত্তের জন্য কিছু রিলিফ</h3>
+                                <p>আগামী অর্থবছরের জন্য নতুন বাজেট ঘোষণা করা হয়েছে। মধ্যবিত্ত পরিবারের জন্য কিছু ছাড় দেওয়া হয়েছে...</p>
+                                <div class="featured-meta">
+                                    <span><i class="far fa-user"></i> প্রতিবেদক ১</span>
+                                    <span><i class="far fa-calendar"></i> ২৩ মে, ২০২৪</span>
+                                </div>
+                            </div>
+                        </article>
+                        
+                        <article class="featured-article" data-id="2">
+                            <div class="featured-img">
+                                <img src="images/default-thumbnail.jpg" alt="আন্তর্জাতিক সম্মেলন" onerror="this.src='https://via.placeholder.com/400x200/1a365d/ffffff?text=সংবাদ+ছবি'">
+                            </div>
+                            <div class="featured-content">
+                                <span class="featured-category" style="background-color: #3182ce">আন্তর্জাতিক</span>
+                                <h3>আন্তর্জাতিক সম্মেলনে বাংলাদেশের সাফল্য</h3>
+                                <p>জাতিসংঘের আয়োজিত জলবায়ু সম্মেলনে বাংলাদেশের প্রতিনিধি দলের সাফল্য আন্তর্জাতিক অঙ্গনে প্রশংসা কুড়িয়েছে...</p>
+                                <div class="featured-meta">
+                                    <span><i class="far fa-user"></i> প্রতিবেদক ২</span>
+                                    <span><i class="far fa-calendar"></i> ২২ মে, ২০২৪</span>
+                                </div>
+                            </div>
+                        </article>
+                        
+                        <article class="featured-article" data-id="3">
+                            <div class="featured-img">
+                                <img src="images/default-thumbnail.jpg" alt="ক্রিকেট বিশ্বকাপ" onerror="this.src='https://via.placeholder.com/400x200/1a365d/ffffff?text=সংবাদ+ছবি'">
+                            </div>
+                            <div class="featured-content">
+                                <span class="featured-category" style="background-color: #38a169">খেলাধুলা</span>
+                                <h3>ক্রিকেট বিশ্বকাপ: বাংলাদেশের জয়</h3>
+                                <p>টি-টোয়েন্টি বিশ্বকাপে বাংলাদেশ ভারতকে হারিয়ে বড় এক জয় পেয়েছে। ম্যাচটিতে বাংলাদেশের বোলিং অত্যন্ত ভালো ছিল...</p>
+                                <div class="featured-meta">
+                                    <span><i class="far fa-user"></i> প্রতিবেদক ৩</span>
+                                    <span><i class="far fa-calendar"></i> ২১ মে, ২০২৪</span>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+                <!-- মূল কন্টেন্ট এলাকা -->
+                <div class="content-area">
+                    <!-- সর্বশেষ সংবাদ -->
+                    <section class="latest-news">
+                        <div class="section-header">
+                            <h2><i class="fas fa-clock"></i> সর্বশেষ সংবাদ</h2>
+                            <div class="category-filter" id="categoryFilter">
+                                <!-- ক্যাটেগরি ফিল্টার এখানে লোড হবে -->
+                                <button class="filter-btn active" data-category="all">সর্বমোট</button>
+                                <button class="filter-btn" data-category="1" style="border-left: 3px solid #e53e3e">জাতীয়</button>
+                                <button class="filter-btn" data-category="2" style="border-left: 3px solid #3182ce">আন্তর্জাতিক</button>
+                                <button class="filter-btn" data-category="3" style="border-left: 3px solid #38a169">খেলাধুলা</button>
+                                <button class="filter-btn" data-category="4" style="border-left: 3px solid #d69e2e">বিনোদন</button>
+                                <button class="filter-btn" data-category="5" style="border-left: 3px solid #805ad5">রাজনীতি</button>
+                                <button class="filter-btn" data-category="6" style="border-left: 3px solid #dd6b20">বাণিজ্য</button>
+                                <button class="filter-btn" data-category="7" style="border-left: 3px solid #319795">প্রযুক্তি</button>
+                                <button class="filter-btn" data-category="8" style="border-left: 3px solid #e53e3e">স্বাস্থ্য</button>
+                            </div>
+                        </div>
+                        <div class="news-grid" id="latestNews">
+                            <!-- সর্বশেষ সংবাদ এখানে লোড হবে -->
+                            <article class="news-article" data-id="4" data-category="4">
+                                <div class="news-img">
+                                    <img src="images/default-thumbnail.jpg" alt="নতুন বাংলা সিনেমা" onerror="this.src='https://via.placeholder.com/400x200/1a365d/ffffff?text=সংবাদ+ছবি'">
+                                </div>
+                                <div class="news-content">
+                                    <span class="news-category" style="background-color: #d69e2e">বিনোদন</span>
+                                    <h3>নতুন বাংলা সিনেমা রেকর্ড ভাঙলো</h3>
+                                    <p>নতুন বাংলা সিনেমা 'মায়াবিনী' মুক্তির প্রথম সপ্তাহেই বক্স অফিসে রেকর্ড ভাঙলো। দর্শকদের মধ্যে সিনেমাটি ব্যাপক সাড়া ফেলেছে।</p>
+                                    <div class="news-meta">
+                                        <span><i class="far fa-user"></i> প্রতিবেদক ৪</span>
+                                        <span><i class="far fa-calendar"></i> ২০ মে, ২০২৪</span>
+                                        <span><i class="far fa-eye"></i> ৩,৮৯০</span>
+                                    </div>
+                                </div>
+                            </article>
+                            
+                            <article class="news-article" data-id="5" data-category="5">
+                                <div class="news-img">
+                                    <img src="images/default-thumbnail.jpg" alt="আগামী নির্বাচন" onerror="this.src='https://via.placeholder.com/400x200/1a365d/ffffff?text=সংবাদ+ছবি'">
+                                </div>
+                                <div class="news-content">
+                                    <span class="news-category" style="background-color: #805ad5">রাজনীতি</span>
+                                    <h3>আগামী নির্বাচন নিয়ে আলোচনা</h3>
+                                    <p>আগামী জাতীয় নির্বাচন নিয়ে প্রধান রাজনৈতিক দলগুলোর মধ্যে আলোচনা শুরু হয়েছে। নির্বাচন কমিশন প্রস্তুতি শুরু করেছে।</p>
+                                    <div class="news-meta">
+                                        <span><i class="far fa-user"></i> প্রতিবেদক ৫</span>
+                                        <span><i class="far fa-calendar"></i> ১৯ মে, ২০২৪</span>
+                                        <span><i class="far fa-eye"></i> ২,৫৬০</span>
+                                    </div>
+                                </div>
+                            </article>
+                            
+                            <article class="news-article" data-id="6" data-category="6">
+                                <div class="news-img">
+                                    <img src="images/default-thumbnail.jpg" alt="শেয়ার বাজার" onerror="this.src='https://via.placeholder.com/400x200/1a365d/ffffff?text=সংবাদ+ছবি'">
+                                </div>
+                                <div class="news-content">
+                                    <span class="news-category" style="background-color: #dd6b20">বাণিজ্য</span>
+                                    <h3>শেয়ার বাজারে নতুন রেকর্ড</h3>
+                                    <p>দেশের শেয়ার বাজারে নতুন রেকর্ড সৃষ্টি হয়েছে। ডিএসই সূচক সর্বোচ্চ স্তরে পৌঁছেছে যা বিনিয়োগকারীদের জন্য সুখবর।</p>
+                                    <div class="news-meta">
+                                        <span><i class="far fa-user"></i> প্রতিবেদক ৬</span>
+                                        <span><i class="far fa-calendar"></i> ১৮ মে, ২০২৪</span>
+                                        <span><i class="far fa-eye"></i> ৪,১২০</span>
+                                    </div>
+                                </div>
+                            </article>
+                            
+                            <article class="news-article" data-id="7" data-category="7">
+                                <div class="news-img">
+                                    <img src="images/default-thumbnail.jpg" alt="প্রযুক্তি অগ্রগতি" onerror="this.src='https://via.placeholder.com/400x200/1a365d/ffffff?text=সংবাদ+ছবি'">
+                                </div>
+                                <div class="news-content">
+                                    <span class="news-category" style="background-color: #319795">প্রযুক্তি</span>
+                                    <h3>প্রযুক্তি জগতে বাংলাদেশের অগ্রগতি</h3>
+                                    <p>কৃত্রিম বুদ্ধিমত্তা এবং তথ্য প্রযুক্তি খাতে বাংলাদেশের অগ্রগতি আন্তর্জাতিকভাবে স্বীকৃতি পেয়েছে।</p>
+                                    <div class="news-meta">
+                                        <span><i class="far fa-user"></i> প্রতিবেদক ৭</span>
+                                        <span><i class="far fa-calendar"></i> ১৭ মে, ২০২৪</span>
+                                        <span><i class="far fa-eye"></i> ৩,৭৮০</span>
+                                    </div>
+                                </div>
+                            </article>
+                            
+                            <article class="news-article" data-id="8" data-category="8">
+                                <div class="news-img">
+                                    <img src="images/default-thumbnail.jpg" alt="স্বাস্থ্য প্রকল্প" onerror="this.src='https://via.placeholder.com/400x200/1a365d/ffffff?text=সংবাদ+ছবি'">
+                                </div>
+                                <div class="news-content">
+                                    <span class="news-category" style="background-color: #e53e3e">স্বাস্থ্য</span>
+                                    <h3>স্বাস্থ্য সেবা উন্নয়নে নতুন প্রকল্প</h3>
+                                    <p>দেশের স্বাস্থ্য সেবা উন্নয়নে নতুন প্রকল্প গ্রহণ করা হয়েছে। প্রত্যেক উপজেলায় আধুনিক হাসপাতাল নির্মাণের পরিকল্পনা করা হয়েছে।</p>
+                                    <div class="news-meta">
+                                        <span><i class="far fa-user"></i> প্রতিবেদক ৮</span>
+                                        <span><i class="far fa-calendar"></i> ১৬ মে, ২০২৪</span>
+                                        <span><i class="far fa-eye"></i> ২,৯৫০</span>
+                                    </div>
+                                </div>
+                            </article>
+                            
+                            <article class="news-article" data-id="9" data-category="1">
+                                <div class="news-img">
+                                    <img src="images/default-thumbnail.jpg" alt="শিক্ষা খাত" onerror="this.src='https://via.placeholder.com/400x200/1a365d/ffffff?text=সংবাদ+ছবি'">
+                                </div>
+                                <div class="news-content">
+                                    <span class="news-category" style="background-color: #e53e3e">জাতীয়</span>
+                                    <h3>শিক্ষা খাতে নতুন পরিকল্পনা</h3>
+                                    <p>শিক্ষা মন্ত্রণালয়ের নতুন পরিকল্পনা ঘোষণা করা হয়েছে। প্রাথমিক শিক্ষা থেকে বিশ্ববিদ্যালয় পর্যায়ে পরিবর্তন আনা হবে।</p>
+                                    <div class="news-meta">
+                                        <span><i class="far fa-user"></i> প্রতিবেদক ৯</span>
+                                        <span><i class="far fa-calendar"></i> ১৫ মে, ২০২৪</span>
+                                        <span><i class="far fa-eye"></i> ৪,৩২০</span>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="load-more">
+                            <button id="loadMoreBtn">আরো সংবাদ দেখুন <i class="fas fa-plus"></i></button>
+                        </div>
+                    </section>
+
+                    <!-- সাইডবার -->
+                    <aside class="sidebar">
+                        <!-- জনপ্রিয় সংবাদ -->
+                        <div class="sidebar-widget">
+                            <h3><i class="fas fa-fire"></i> জনপ্রিয় সংবাদ</h3>
+                            <div class="popular-news" id="popularNews">
+                                <!-- জনপ্রিয় সংবাদ এখানে লোড হবে -->
+                                <div class="popular-item" data-id="1">
+                                    <div class="popular-rank">1</div>
+                                    <div class="popular-content">
+                                        <h4>নতুন বাজেট ঘোষণা: মধ্যবিত্তের জন্য কিছু রিলিফ</h4>
+                                        <div class="popular-meta">
+                                            <span><i class="far fa-calendar"></i> ২৩ মে, ২০২৪</span>
+                                            <span><i class="far fa-eye"></i> ৪,৫২০</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="popular-item" data-id="2">
+                                    <div class="popular-rank">2</div>
+                                    <div class="popular-content">
+                                        <h4>ক্রিকেট বিশ্বকাপ: বাংলাদেশের জয়</h4>
+                                        <div class="popular-meta">
+                                            <span><i class="far fa-calendar"></i> ২১ মে, ২০২৪</span>
+                                            <span><i class="far fa-eye"></i> ৩,৮৯০</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="popular-item" data-id="3">
+                                    <div class="popular-rank">3</div>
+                                    <div class="popular-content">
+                                        <h4>আন্তর্জাতিক সম্মেলনে বাংলাদেশের সাফল্য</h4>
+                                        <div class="popular-meta">
+                                            <span><i class="far fa-calendar"></i> ২২ মে, ২০২৪</span>
+                                            <span><i class="far fa-eye"></i> ৩,৫৬০</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="popular-item" data-id="4">
+                                    <div class="popular-rank">4</div>
+                                    <div class="popular-content">
+                                        <h4>নতুন বাংলা সিনেমা রেকর্ড ভাঙলো</h4>
+                                        <div class="popular-meta">
+                                            <span><i class="far fa-calendar"></i> ২০ মে, ২০২৪</span>
+                                            <span><i class="far fa-eye"></i> ৩,২৪০</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="popular-item" data-id="5">
+                                    <div class="popular-rank">5</div>
+                                    <div class="popular-content">
+                                        <h4>শেয়ার বাজারে নতুন রেকর্ড</h4>
+                                        <div class="popular-meta">
+                                            <span><i class="far fa-calendar"></i> ১৮ মে, ২০২৪</span>
+                                            <span><i class="far fa-eye"></i> ২,৯৮০</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+<!-- বিশেষ নোটিশ -->
+<div class="special-notice">
+    <div class="container">
+        <div class="notice-content">
+            <i class="fas fa-star"></i>
+            <span><strong>বিশেষ রিপোর্ট:</strong> এসপি সিয়াম আহমেদের ডিজিটাল বাংলাদেশ নির্মাণে অবদান সম্পর্কে পড়ুন</span>
+            <a href="#" class="read-more" id="readSiamPost">পড়ুন</a>
+        </div>
+    </div>
+</div>
+
+
+                        <!-- ক্যাটেগরিগুলো -->
+                        <div class="sidebar-widget">
+                            <h3><i class="fas fa-list"></i> ক্যাটেগরি</h3>
+                            <div class="category-list" id="categoryList">
+                                <!-- ক্যাটেগরিগুলো এখানে লোড হবে -->
+                                <a href="#" data-category="1"><i class="fas fa-flag"></i> জাতীয়</a>
+                                <a href="#" data-category="2"><i class="fas fa-globe-asia"></i> আন্তর্জাতিক</a>
+                                <a href="#" data-category="3"><i class="fas fa-futbol"></i> খেলাধুলা</a>
+                                <a href="#" data-category="4"><i class="fas fa-film"></i> বিনোদন</a>
+                                <a href="#" data-category="5"><i class="fas fa-landmark"></i> রাজনীতি</a>
+                                <a href="#" data-category="6"><i class="fas fa-chart-line"></i> বাণিজ্য</a>
+                                <a href="#" data-category="7"><i class="fas fa-laptop"></i> প্রযুক্তি</a>
+                                <a href="#" data-category="8"><i class="fas fa-heartbeat"></i> স্বাস্থ্য</a>
+                            </div>
+                        </div>
+
+                        <!-- আজকের তারিখ -->
+                        <div class="sidebar-widget">
+                            <h3><i class="fas fa-calendar-day"></i> আজকের তারিখ</h3>
+                            <div class="today-date">
+                                <div class="date-box">
+                                    <div class="date-day" id="dateDay">২৩</div>
+                                    <div class="date-month-year">
+                                        <div class="date-month" id="dateMonth">মে</div>
+                                        <div class="date-year" id="dateYear">২০২৪</div>
+                                    </div>
+                                </div>
+                                <div class="date-bangla" id="banglaDate">১০ জ্যৈষ্ঠ ১৪৩১</div>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- ফুটার -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>দৈনিক সংবাদ</h2>
+                    <p>সত্য ও ন্যায়ের পথে অঙ্গীকারবদ্ধ</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <div class="link-column">
+                        <h4>সংবাদ</h4>
+                        <a href="#" data-category="1"><i class="fas fa-flag"></i> জাতীয়</a>
+                        <a href="#" data-category="2"><i class="fas fa-globe-asia"></i> আন্তর্জাতিক</a>
+                        <a href="#" data-category="3"><i class="fas fa-futbol"></i> খেলাধুলা</a>
+                        <a href="#" data-category="4"><i class="fas fa-film"></i> বিনোদন</a>
+                    </div>
+                    <div class="link-column">
+                        <h4>কোম্পানি</h4>
+                        <a href="#"><i class="fas fa-info-circle"></i> আমাদের সম্পর্কে</a>
+                        <a href="#"><i class="fas fa-briefcase"></i> ক্যারিয়ার</a>
+                        <a href="#"><i class="fas fa-phone-alt"></i> যোগাযোগ</a>
+                        <a href="#"><i class="fas fa-shield-alt"></i> গোপনীয়তা নীতি</a>
+                    </div>
+                    <div class="link-column">
+                        <h4>সামাজিক যোগাযোগ</h4>
+                        <a href="#"><i class="fab fa-facebook"></i> ফেসবুক</a>
+                        <a href="#"><i class="fab fa-twitter"></i> টুইটার</a>
+                        <a href="#"><i class="fab fa-youtube"></i> ইউটিউব</a>
+                        <a href="#"><i class="fab fa-instagram"></i> ইনস্টাগ্রাম</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>কপিরাইট © <span id="copyrightYear">২০২৬</span> দৈনিক সংবাদ। সকল স্বত্ব সংরক্ষিত।</p>
+                <p>এই ওয়েবসাইটটি সম্পূর্ণরূপে Sp Siam Ahmed এর ডেটা ব্যবহার করে তৈরি করা হয়েছে</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript ফাইল -->
+    <script src="script.js"></script>
+    
+    <!-- Font Awesome Fallback Script -->
+    <script>
+        // Font Awesome লোড হয়েছে কিনা চেক
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+                const icons = document.querySelectorAll('.fas, .far, .fab');
+                let hasIcons = false;
+                
+                icons.forEach(icon => {
+                    const style = window.getComputedStyle(icon, ':before');
+                    if (style.content && style.content !== 'none' && style.content !== '""') {
+                        hasIcons = true;
+                    }
+                });
+                
+                if (!hasIcons && icons.length > 0) {
+                    console.log('Font Awesome লোড হয়নি, fallback icons ব্যবহার করা হচ্ছে');
+                    
+                    // Emoji fallback
+                    const fallbacks = {
+                        'fa-moon': '🌙',
+                        'fa-sun': '☀️',
+                        'fa-font': 'A',
+                        'fa-bars': '☰',
+                        'fa-times': '✕',
+                        'fa-home': '🏠',
+                        'fa-flag': '🇧🇩',
+                        'fa-globe-asia': '🌏',
+                        'fa-futbol': '⚽',
+                        'fa-film': '🎬',
+                        'fa-landmark': '🏛️',
+                        'fa-chart-line': '📈',
+                        'fa-laptop': '💻',
+                        'fa-heartbeat': '❤️',
+                        'fa-newspaper': '📰',
+                        'fa-search': '🔍',
+                        'fa-sign-in-alt': '🔐',
+                        'fa-user-plus': '👤+',
+                        'fa-chevron-up': '↑',
+                        'fa-arrow-left': '←',
+                        'fa-arrow-right': '→',
+                        'fa-plus': '+',
+                        'fa-fire': '🔥',
+                        'fa-list': '📋',
+                        'fa-calendar-day': '📅',
+                        'fa-user': '👤',
+                        'fa-calendar': '📅',
+                        'fa-eye': '👁️',
+                        'fa-clock': '🕒',
+                        'fa-star': '⭐',
+                        'fa-bolt': '⚡',
+                        'fa-facebook-f': 'f',
+                        'fa-twitter': 't',
+                        'fa-youtube': 'y',
+                        'fa-instagram': 'ig',
+                        'fa-info-circle': 'ℹ️',
+                        'fa-briefcase': '💼',
+                        'fa-phone-alt': '📞',
+                        'fa-shield-alt': '🛡️'
+                    };
+                    
+                    document.querySelectorAll('i').forEach(icon => {
+                        icon.classList.forEach(cls => {
+                            if (fallbacks[cls]) {
+                                icon.innerHTML = fallbacks[cls];
+                                icon.style.fontFamily = 'Arial, sans-serif';
+                                icon.style.fontSize = '1.2em';
+                            }
+                        });
+                    });
+                }
+            }, 2000);
+        });
+    </script>
+    <script type="text/javascript">
+    // বিশেষ পোস্ট পড়ার লিঙ্ক
+    const readSiamPost = document.getElementById('readSiamPost');
+    if (readSiamPost) {
+    readSiamPost.addEventListener('click', function(e) {
+    e.preventDefault();
+    loadPostDetail(10); // এসপি সিয়াম আহমেদের পোস্ট আইডি 10
+    });
+    }
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "name": "জাতীয়",
+    "icon": "fas fa-flag",
+    "color": "#e53e3e",
+    "description": "জাতীয় পর্যায়ের সংবাদ"
+  },
+  {
+    "id": 2,
+    "name": "আন্তর্জাতিক",
+    "icon": "fas fa-globe-asia",
+    "color": "#3182ce",
+    "description": "আন্তর্জাতিক সংবাদ"
+  },
+  {
+    "id": 3,
+    "name": "খেলাধুলা",
+    "icon": "fas fa-futbol",
+    "color": "#38a169",
+    "description": "খেলাধুলার সকল সংবাদ"
+  },
+  {
+    "id": 4,
+    "name": "বিনোদন",
+    "icon": "fas fa-film",
+    "color": "#d69e2e",
+    "description": "সিনেমা, গান এবং বিনোদন"
+  },
+  {
+    "id": 5,
+    "name": "রাজনীতি",
+    "icon": "fas fa-landmark",
+    "color": "#805ad5",
+    "description": "রাজনৈতিক সংবাদ"
+  },
+  {
+    "id": 6,
+    "name": "বাণিজ্য",
+    "icon": "fas fa-chart-line",
+    "color": "#dd6b20",
+    "description": "বাণিজ্য এবং অর্থনীতি"
+  },
+  {
+    "id": 7,
+    "name": "প্রযুক্তি",
+    "icon": "fas fa-laptop",
+    "color": "#319795",
+    "description": "প্রযুক্তি এবং উদ্ভাবন"
+  },
+  {
+    "id": 8,
+    "name": "স্বাস্থ্য",
+    "icon": "fas fa-heartbeat",
+    "color": "#e53e3e",
+    "description": "স্বাস্থ্য এবং চিকিৎসা"
+  }
+]
